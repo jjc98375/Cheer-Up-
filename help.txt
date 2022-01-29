@@ -1,0 +1,14 @@
+```
+$help - to get the list of commands and their description
+$hello - receive 안녕!
+$inspire - get the random inspiring quote
+$add_enc - add more encouraging message
+$add_sad - add more sad word to be recognized
+$del_enc - delete the encouraging message
+$del_sad - delete the sad word
+$list_enc - see the current encouraging messages
+$list_sad - see the current sad words
+$clear_enc - erase the encouraging messages except the starter
+$clear_sad - erase the sad word except the starter
+$responding - true makes the bot to recognize the sad word; other inputs won't allow bot to recognize the sad word
+```
