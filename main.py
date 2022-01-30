@@ -31,12 +31,17 @@ def update_encouragements(encouraging_message):
     db["encouragements"] = [encouraging_message]
 
 def update_sad(sad_words):
-  if "sad" in db.keys():
-    sad = db["sad"]
-    sad.append(sad_words)
-    db["sad"] = sad
-  else:
-    db["sad"] = [sad_words]
+  # if "sad" in db.keys():
+  #   sad = db["sad"]
+  #   if sad_words in sad:
+  #     await message.channel.send("The word you just added can't be added due to the duplication of words")
+  #   else
+
+  #   sad.append(sad_words)
+  #   db["sad"] = sad
+  # else:
+  #   db["sad"] = [sad_words]
+  db["sad"].append(sad_words)
 
 
 
@@ -73,8 +78,12 @@ async def on_message(message):
 
   msg = message.content
   msg = msg.lower()
-  # print(msg)
+  
 
+
+
+
+#######################################################################
   if msg.startswith('$help'):
     # file = open("help.txt")
     # for line in file:
@@ -108,9 +117,6 @@ async def on_message(message):
 
   if msg.startswith('$add_sad'):
     sad_message = msg.split("$add_sad ", 1)[1]
-    # if sad_message == "sad":
-    #   await message.channel.send("The word 'sad' can't be added due to the duplication of command keys")
-    # else:
     update_sad(sad_message)
     await message.channel.send("New sad word added.")
 
